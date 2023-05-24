@@ -1,8 +1,19 @@
+.container{
+    height:max-content;
+
+    display: flex;
+    position: relative;
+    top: 10vw;
+    justify-content: center;
+}
 .form{
-    margin-top: 1vw;
+    width: 100%;
     margin-left: 2vw;
-    font-size: 2rem;
-    display: inline-block;
+    font-size: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
 }
 
 .result{
@@ -18,3 +29,12 @@
 .block{
     display: block;
 }
+
+@media only screen and (max-width: 480px) {
+    .form{
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        
+    }
+    
+  }

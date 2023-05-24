@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 // import Rating from '@mui/material/Rating';
-import { Autocomplete, Button, Rating } from '@mui/material'
+import { Autocomplete, Button, Rating, TextField, InputLabel } from '@mui/material'
 import countries from './data.json'
 import './tip-form.css'
+import './popup.css'
 import axios from 'axios'
+import { Link } from "react-router-dom"
+import Popup from 'reactjs-popup';
 const tipData = countries
 
 
@@ -19,9 +22,9 @@ function Tipform() {
             console.log(error);
         });
     };
-    useEffect(() =>{
+    useEffect(() => {
         getGeoInfo();
-    },[])
+    }, [])
 
 
     const [serviceRating, setServiceRating] = useState()
@@ -54,12 +57,12 @@ function Tipform() {
                 chosenTip = tips.standard;
             tip = Math.ceil(price * chosenTip)
             totalPrice = Math.ceil(tip + price * 1);
-            divideByAmount = Math.ceil(tip / amount)
-            // setDataResult([...dataResult,totalPrice,tip,divideByAmount])
+            divideByAmount = Math.ceil(totalPrice / amount)
+            sessionStorage.setItem('tip', tip)
+            sessionStorage.setItem('totalPrice', totalPrice)
+            sessionStorage.setItem('divideByAmount', divideByAmount)
 
-            console.log(`the total price is: ${totalPrice}`)
-            console.log(`the tip is: ${tip}`)
-            console.log(`the tip divided by the people is: ${divideByAmount}`)
+
             setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount])
             setBlock('block')
             console.log(dataResult);
@@ -77,43 +80,63 @@ function Tipform() {
     return (
         <div className="container">
             <div className="form">
-                <div className="price fix-place">
-                    <div>add price:</div>
-                    <input type="number" placeholder="enter the price:" onChange={(e) => { setPrice(e.target.value) }} />
+                <div className="inputs">
+                    <div className="country fix-place">
+                        <InputLabel htmlFor="country-input">
+                            Country
+                        </InputLabel>
+                        <TextField id="country-input" type="text"  placeholder="enter the country:" value={chosenCountry} onChange={(e) => { setChosenCountry(e.target.value) }} />
+                    </div>
+                    <div className="price fix-place">
+                        <br />
+                        <TextField type="number" label="Enter price" placeholder="Enter the price:" onChange={(e) => { setPrice(e.target.value) }} />
+                    </div>
+                    <div className="amount">
+                        <br />
+                        <TextField type="number" label="Number of people" value={amount} min={1} max={50} onChange={(e) => setAmount(e.target.value)} />
+                    </div>
                 </div>
-                <div className="country fix-place">
-                    <div>country:</div>
-                    <input type="text" placeholder="enter the country:" value={chosenCountry} onChange={(e) => { setChosenCountry(e.target.value) }} />
+
+                <div className="ratings">
+                    <div className="rating-box">
+                        <div>Service:</div>
+                        <Rating size="large" onChange={(e) => {
+                            setServiceRating(e.target.value * 50)
+                        }}></Rating>
+                    </div>
+                    <div className="rating-box">
+                        <div>Food:</div>
+                        <Rating size="large" onChange={(e) => setFoodRating(e.target.value * 30)}></Rating>
+                    </div>
+                    <div className="rating-box">
+                        <div>Atmosophire:</div>
+                        <Rating size="large" onChange={(e) => setAtmoRating(e.target.value * 20)}></Rating>
+                    </div>
                 </div>
-                <div className="rating-box">
-                    <div>the service:</div>
-                    <Rating onChange={(e) => {
-                        setServiceRating(e.target.value * 50)
-                    }}></Rating>
-                    {serviceRating}
+                <div className="calc-button">
+                    <Popup
+                        trigger={<Button>Your'e Tip</Button>}
+                        modal
+                        closeOnDocumentClick
+                        onOpen={handleCalculate}
+                    >
+                        {close => (
+                            // <div className="background-popup">
+                                <div className="popup">
+                                    <button className="close-btn" onClick={close}>
+                                        X
+                                    </button>
+                                    <div className="text-popup">
+                                        <h1>Tip Summary</h1>
+                                        <h2>The tip is {dataResult[1]}</h2>
+                                        <h2>Total price {dataResult[0]}</h2>
+                                        <h2>Each person {dataResult[2]}</h2>
+                                    </div>
+                                </div>
+                            // </div>
+                        )}
+                    </Popup>
                 </div>
-                <div className="rating-box">
-                    <div>the food:</div>
-                    <Rating onChange={(e) => setFoodRating(e.target.value * 30)}></Rating>
-                    {foodRating}
-                </div>
-                <div className="rating-box">
-                    <div>the atmosophire:</div>
-                    <Rating onChange={(e) => setAtmoRating(e.target.value * 20)}></Rating>
-                    {atmoRating}
-                </div>
-                <div className="amount">
-                    <div>amount of people:</div>
-                    <input type="number" value={amount} min={1} max={50} onChange={(e) => setAmount(e.target.value)} />
-                </div>
-                <Button onClick={handleCalculate}>calculate</Button>
-            </div>
-            <div className={`result ${block}`}>
-                {`the total price is: ${dataResult[0]}`}
-                <br />
-                {`the tip is: ${dataResult[1]}`}
-                <br />
-                {`all person need to pay: ${dataResult[2]}`}
             </div>
         </div>
 

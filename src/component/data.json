@@ -9,7 +9,15 @@
       }
     },
     {
-      "country": "Brazil",
+      "country": "Austria",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Belgium",
       "tips": {
         "good": 0.1,
         "standard": 0.1,
@@ -20,6 +28,14 @@
       "country": "Canada",
       "tips": {
         "good": 0.15,
+        "standard": 0.15,
+        "poor": 0.1
+      }
+    },
+    {
+      "country": "Chile",
+      "tips": {
+        "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
       }
@@ -33,11 +49,43 @@
       }
     },
     {
+      "country": "Czech Republic",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Denmark",
+      "tips": {
+        "good": 0.0,
+        "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Estonia",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Finland",
+      "tips": {
+        "good": 0.0,
+        "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
       "country": "France",
       "tips": {
-        "good": 0.1,
-        "standard": 0.1,
-        "poor": 0.05
+        "good": null,
+        "standard": null,
+        "poor": null
       }
     },
     {
@@ -49,10 +97,42 @@
       }
     },
     {
-      "country": "India",
+      "country": "Greece",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Hungary",
       "tips": {
         "good": 0.1,
-        "standard": 0.05,
+        "standard": 0.1,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Iceland",
+      "tips": {
+        "good": 0.0,
+        "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "India",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Ireland",
+      "tips": {
+        "good": 0.1,
+        "standard": 0.1,
         "poor": 0.0
       }
     },
@@ -61,7 +141,7 @@
       "tips": {
         "good": 0.15,
         "standard": 0.12,
-        "poor": 0.1
+        "poor": 0.10
       }
     },
     {
@@ -75,8 +155,40 @@
     {
       "country": "Japan",
       "tips": {
+        "good": null,
+        "standard": null,
+        "poor": null
+      }
+    },
+    {
+      "country": "Korea",
+      "tips": {
         "good": 0.0,
         "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Latvia",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Lithuania",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Luxembourg",
+      "tips": {
+        "good": 0.1,
+        "standard": 0.1,
         "poor": 0.0
       }
     },
@@ -91,48 +203,80 @@
     {
       "country": "Netherlands",
       "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "New Zealand",
+      "tips": {
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
       }
     },
     {
-      "country": "Russia",
+      "country": "Norway",
+      "tips": {
+        "good": 0.0,
+        "standard": 0.0,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Poland",
       "tips": {
         "good": 0.1,
         "standard": 0.1,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Portugal",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Slovak Republic",
+      "tips": {
+        "good": 0.1,
+        "standard": 0.1,
+        "poor": 0.0
+      }
+    },
+    {
+      "country": "Slovenia",
+      "tips": {
+        "good": 0.05,
+        "standard": 0.05,
         "poor": 0.0
       }
     },
     {
       "country": "Spain",
       "tips": {
-        "good": 0.1,
-        "standard": 0.07,
+        "good": 0.05,
+        "standard": 0.05,
         "poor": 0.0
       }
     },
     {
       "country": "Sweden",
       "tips": {
-        "good": 0.1,
-        "standard": 0.1,
+        "good": 0.0,
+        "standard": 0.0,
         "poor": 0.0
       }
     },
     {
       "country": "Switzerland",
       "tips": {
-        "good": 0.1,
-        "standard": 0.1,
-        "poor": 0.0
-      }
-    },
-    {
-      "country": "Thailand",
-      "tips": {
-        "good": 0.1,
-        "standard": 0.05,
+        "good": 0.0,
+        "standard": 0.0,
         "poor": 0.0
       }
     },
@@ -145,17 +289,9 @@
       }
     },
     {
-      "country": "United Arab Emirates",
-      "tips": {
-        "good": 0.1,
-        "standard": 0.0,
-        "poor": 0.0
-      }
-    },
-    {
       "country": "United Kingdom",
       "tips": {
-        "good": 0.12,
+        "good": 0.15,
         "standard": 0.1,
         "poor": 0.0
       }
@@ -163,7 +299,7 @@
     {
       "country": "United States",
       "tips": {
-        "good": 0.2,
+        "good": 0.15,
         "standard": 0.15,
         "poor": 0.1
       }
