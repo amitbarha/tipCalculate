@@ -28,7 +28,123 @@
     grid-gap: 3vw;
 }
 .cube-info{
-    background-color: aqua;
-    width: 30vw;
-    height: 30vw;
+    background-color: rgba(0, 0, 0, 0.644);
+    width: 42vw;
+    height: 50vw;
+    color: white;
+    border-radius: 5%;
 }
+
+
+.paragraph {
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+    line-height: 1.5;
+    margin: 1vw;
+  }
+  
+  .mark {
+    background-color: #FFD700;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  .link-button-design{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.title-cube{
+    margin-left: 2vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    text-decoration: none;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #dd9726cb;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #dce2e8;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #0c0c0cbc;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #d59621da;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+
+
+
+
+@media only screen and (max-width: 480px) {
+    .home-page{
+        height: 100vh;
+    }
+    .options{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cube-info{
+        background-color: rgba(0, 0, 0, 0.644);
+        width: auto;
+        height: 60vw;
+        color: white;
+        border-radius: 5%;
+    }
+    
+    .paragraph {
+        font-family: Arial, sans-serif;
+        font-size: 3vw;
+        line-height: 1.5;
+        margin: 1vw;
+      }
+      .title{
+        display: none;
+      }
+  }

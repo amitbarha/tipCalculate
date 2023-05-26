@@ -2,6 +2,8 @@ import { Outlet, Link } from "react-router-dom"
 import './layout.css'
 import Logo from './../assets/logo.png'
 
+
+
 function Layout() {
     return (
         <div>

@@ -46,3 +46,17 @@
     display: flex;
 }
 
+@media only screen and (max-width: 480px) {
+    .navbar{
+        height: 25vw;
+        
+    }
+    #logo{
+        width: 60vw;
+        height: 30vw;
+    }
+    .links-without-logo{
+        display: none;
+    }
+    
+  }
