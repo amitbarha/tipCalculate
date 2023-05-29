@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Tesseract from 'tesseract.js';
 import Dropzone from 'react-dropzone';
-function FindTotal(bill) {
-  let price;
-  const lowerBill = bill.toLowerCase();
-  const cleanBill = lowerBill.replace(/\n/g, " ")
-  const billArr = cleanBill.split(' ')
-  const index = billArr.lastIndexOf("total")
-  console.log(billArr);
-  if (index != -1) {
-    const total = billArr[index + 1]
-    price = toPrice(total);
-  }
-  else {
-    price = -1
-  }
-  return price;
-}
-function toPrice(total) {
-  const arrTotal = total.split('')
-  const newArr = arrTotal.filter(value => !isNaN(value) || value == '.' || value == ',')
-  const price = newArr.join('') * 1
-  return price;
-}
+import { Context } from "../Context";
+import './tip-form.css'
 
 
 
 const ImageToText = () => {
+  function FindTotal(bill) {
+    let price;
+    const lowerBill = bill.toLowerCase();
+    const cleanBill = lowerBill.replace(/\n/g, " ")
+    const billArr = cleanBill.split(' ')
+    const index = billArr.lastIndexOf("total")
+    console.log(billArr);
+    if (index != -1) {
+      const total = billArr[index + 1]
+      price = toPrice(total);
+    }
+    else {
+      price = -1
+    }
+    return price;
+  }
+  
+  
+  function toPrice(total) {
+    const arrTotal = total.split('')
+    const newArr = arrTotal.filter(value => !isNaN(value) || value == '.' || value == ',')
+    const price = newArr.join('') * 1
+    sessionStorage.setItem('price' ,price); 
+    setPhotoPrice(sessionStorage.getItem('price'))
+  
+    return price;
+  }
+  const { photoPrice, setPhotoPrice } = useContext(Context);
   const [imageText, setImageText] = useState('');
   const [price, setPrice] = useState('')
 
@@ -37,6 +45,7 @@ const ImageToText = () => {
     setImageText(text);
     console.log(text);
     setPrice(FindTotal(text.toLowerCase()))
+    console.log(price);
 
   };
 
@@ -50,8 +59,10 @@ const ImageToText = () => {
               photo_camera
             </span>
           </div>
+
         )}
       </Dropzone>
+      <div id='price-image-to-text'>{price}</div>
     </div>
   );
 };

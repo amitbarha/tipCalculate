@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 // import Rating from '@mui/material/Rating';
 import { Autocomplete, Button, Rating, TextField, InputLabel } from '@mui/material'
 import countries from './data.json'
 import './tip-form.css'
 import './popup.css'
 import axios from 'axios'
+import { Context } from "../Context";
 import Tesseract from 'tesseract.js';
 import Dropzone from 'react-dropzone';
 import { Link } from "react-router-dom"
@@ -28,27 +29,24 @@ function Tipform() {
     useEffect(() => {
         getGeoInfo();
     }, [])
-
-
-
-    const [serviceRating, setServiceRating] = useState()
-    const [foodRating, setFoodRating] = useState()
-    const [atmoRating, setAtmoRating] = useState()
-    const [price, setPrice] = useState()
+    const [serviceRating, setServiceRating] = useState(1)
+    const [foodRating, setFoodRating] = useState(1)
+    const [atmoRating, setAtmoRating] = useState(1)
+    const [price, setPrice] = useState(0)
     const [amount, setAmount] = useState(1)
     const [block, setBlock] = useState('')
     const [dataResult, setDataResult] = useState([])
     const [backgroundFlag, setBackgroundFlag] = useState();
-
+    const { photoPrice, setPhotoPrice } = useContext(Context);
     let tips;
     let tip;
     let totalPrice;
     let divideByAmount;
     
-    
 
     function handleCalculate() {
 
+        console.log(photoPrice);
         let chosenTip;
         // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
         const index = tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
@@ -97,8 +95,11 @@ function Tipform() {
                     <br />
                     <div className="price-input">
                         <br />
-                        <TextField type="number" label="Enter price" placeholder="Enter the price:" onChange={(e) => { setPrice(e.target.value) }} />
+                        <TextField type="number" label="Enter price" value={price} placeholder="Enter the price:" onChange={(e) =>{ setPrice(e.target.value) }} />
+                        <div>
                         <ImageToText />
+                        {sessionStorage.getItem('price')&& <button onClick={() => setPrice(sessionStorage.getItem('price'))}>add</button>}
+                        </div>
                     </div>
                     <div className="amount">
                         <br />
