@@ -5,8 +5,11 @@ import countries from './data.json'
 import './tip-form.css'
 import './popup.css'
 import axios from 'axios'
+import Tesseract from 'tesseract.js';
+import Dropzone from 'react-dropzone';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
+import ImageToText from "./ImageToText"
 const tipData = countries
 
 
@@ -27,6 +30,7 @@ function Tipform() {
     }, [])
 
 
+
     const [serviceRating, setServiceRating] = useState()
     const [foodRating, setFoodRating] = useState()
     const [atmoRating, setAtmoRating] = useState()
@@ -34,18 +38,22 @@ function Tipform() {
     const [amount, setAmount] = useState(1)
     const [block, setBlock] = useState('')
     const [dataResult, setDataResult] = useState([])
+    const [backgroundFlag, setBackgroundFlag] = useState();
 
     let tips;
     let tip;
     let totalPrice;
     let divideByAmount;
-
+    
+    
 
     function handleCalculate() {
 
         let chosenTip;
-        const index = tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase());
+        // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
+        const index = tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
         if (index != -1) {
+            setBackgroundFlag(tipData.countries[index].flag)
             tips = tipData.countries[index].tips
             console.log(tips);
             let totalRating = serviceRating + foodRating + atmoRating;
@@ -61,9 +69,8 @@ function Tipform() {
             sessionStorage.setItem('tip', tip)
             sessionStorage.setItem('totalPrice', totalPrice)
             sessionStorage.setItem('divideByAmount', divideByAmount)
-
-
-            setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount])
+            const coin = tipData.countries[index].coin;
+            setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount, dataResult[3] = coin])
             setBlock('block')
             console.log(dataResult);
 
@@ -78,18 +85,20 @@ function Tipform() {
 
 
     return (
-        <div className="container">
+        <div className="container" >
             <div className="form">
                 <div className="inputs">
                     <div className="country fix-place">
                         <InputLabel htmlFor="country-input">
                             Country
                         </InputLabel>
-                        <TextField id="country-input" type="text"  placeholder="enter the country:" value={chosenCountry} onChange={(e) => { setChosenCountry(e.target.value) }} />
+                        <TextField id="country-input" type="text" placeholder="enter the country:" value={chosenCountry} onChange={(e) => { setChosenCountry(e.target.value) }} />
                     </div>
-                    <div className="price fix-place">
+                    <br />
+                    <div className="price-input">
                         <br />
                         <TextField type="number" label="Enter price" placeholder="Enter the price:" onChange={(e) => { setPrice(e.target.value) }} />
+                        <ImageToText />
                     </div>
                     <div className="amount">
                         <br />
@@ -112,6 +121,7 @@ function Tipform() {
                         <div>Atmosophire:</div>
                         <Rating size="large" onChange={(e) => setAtmoRating(e.target.value * 20)}></Rating>
                     </div>
+                    <div></div>
                 </div>
                 <div className="calc-button">
                     <Popup
@@ -122,17 +132,17 @@ function Tipform() {
                     >
                         {close => (
                             // <div className="background-popup">
-                                <div className="popup">
-                                    <button className="close-btn" onClick={close}>
-                                        X
-                                    </button>
-                                    <div className="text-popup">
-                                        <h1>Tip Summary</h1>
-                                        <h2>The tip is {dataResult[1]}</h2>
-                                        <h2>Total price {dataResult[0]}</h2>
-                                        <h2>Each person {dataResult[2]}</h2>
-                                    </div>
+                            <div className="popup" style={{ backgroundImage: `url(${backgroundFlag})` }}>
+                                <button className="close-btn" onClick={close}>
+                                    X
+                                </button>
+                                <div className="text-popup">
+                                    <h1>Tip Summary</h1>
+                                    {dataResult[1] != 0 ? <h2>The tip is {dataResult[1]}{dataResult[3]}</h2> : <h2 style={{ textAlign: 'center' }}>In this country the Tip is not expected or required in relation to the grade you gave. </h2>}
+                                    <h2>Total price {dataResult[0]}{dataResult[3]}</h2>
+                                    <h2>Each person {dataResult[2]}{dataResult[3]}</h2>
                                 </div>
+                            </div>
                             // </div>
                         )}
                     </Popup>

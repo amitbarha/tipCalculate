@@ -22,10 +22,12 @@
     "react-bootstrap": "^2.7.4",
     "react-bootstrap-navbar-offcanvas": "^1.0.3",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-router-dom": "^6.11.2",
     "reactjs-popup": "^2.0.5",
     "sort-by": "^1.2.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "tesseract.js": "^4.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

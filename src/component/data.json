@@ -3,10 +3,14 @@
     {
       "country": "Australia",
       "tips": {
-        "good": 0.15,
-        "standard": 0.1,
+        "good": 0.1,
+        "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg",
+      "coin": "AU$"
+      
+      
     },
     {
       "country": "Austria",
@@ -14,7 +18,10 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/255px-Flag_of_Austria.svg.png",
+      "coin": "€"
+      
     },
     {
       "country": "Belgium",
@@ -22,7 +29,10 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/692px-Flag_of_Belgium.svg.png",
+      "coin": "€"
+      
     },
     {
       "country": "Canada",
@@ -30,7 +40,10 @@
         "good": 0.15,
         "standard": 0.15,
         "poor": 0.1
-      }
+      },
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Canada_%281964%29.svg/2560px-Flag_of_Canada_%281964%29.svg.png",
+      "coin": "CA$"
+      
     },
     {
       "country": "Chile",
@@ -38,7 +51,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "https://cdn.britannica.com/85/7485-004-00B07230/Flag-Chile.jpg",
+      "coin": "CLP$"
+      
+      
     },
     {
       "country": "China",
@@ -46,15 +63,23 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "https://cdn.britannica.com/90/7490-004-BAD4AA72/Flag-China.jpg",
+      "coin": "¥"
+      
+      
     },
     {
       "country": "Czech Republic",
       "tips": {
-        "good": 0.05,
-        "standard": 0.05,
+        "good": 0.1,
+        "standard": 0.00,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "Kč"
+
+      
     },
     {
       "country": "Denmark",
@@ -62,7 +87,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "kr"
+
+      
     },
     {
       "country": "Estonia",
@@ -70,7 +99,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "KR"
+
+      
     },
     {
       "country": "Finland",
@@ -78,7 +111,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "Mk"
+
+      
     },
     {
       "country": "France",
@@ -86,7 +123,11 @@
         "good": null,
         "standard": null,
         "poor": null
-      }
+      },
+      "flag": "",
+      "coin": "€"
+
+      
     },
     {
       "country": "Germany",
@@ -94,7 +135,11 @@
         "good": 0.1,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "€"
+
+      
     },
     {
       "country": "Greece",
@@ -102,7 +147,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "€"
+
+      
     },
     {
       "country": "Hungary",
@@ -110,7 +159,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Iceland",
@@ -118,7 +171,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "India",
@@ -126,7 +183,11 @@
         "good": 0.05,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Ireland",
@@ -134,7 +195,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Israel",
@@ -142,7 +207,11 @@
         "good": 0.15,
         "standard": 0.12,
         "poor": 0.10
-      }
+      },
+      "flag": "https://cdn.britannica.com/53/1753-004-03582EDA/Flag-Israel.jpg",
+      "coin": ""
+      
+      
     },
     {
       "country": "Italy",
@@ -150,7 +219,12 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": "€"
+
+      
+      
     },
     {
       "country": "Japan",
@@ -158,7 +232,11 @@
         "good": null,
         "standard": null,
         "poor": null
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Korea",
@@ -166,7 +244,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Latvia",
@@ -174,7 +256,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Lithuania",
@@ -182,7 +268,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Luxembourg",
@@ -190,7 +280,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Mexico",
@@ -198,7 +292,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Netherlands",
@@ -206,7 +304,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "New Zealand",
@@ -214,7 +316,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Norway",
@@ -222,7 +328,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Poland",
@@ -230,7 +340,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Portugal",
@@ -238,7 +352,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Slovak Republic",
@@ -246,7 +364,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Slovenia",
@@ -254,7 +376,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Spain",
@@ -262,7 +388,11 @@
         "good": 0.05,
         "standard": 0.05,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Sweden",
@@ -270,7 +400,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Switzerland",
@@ -278,7 +412,11 @@
         "good": 0.0,
         "standard": 0.0,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "Turkey",
@@ -286,7 +424,11 @@
         "good": 0.1,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "United Kingdom",
@@ -294,7 +436,11 @@
         "good": 0.15,
         "standard": 0.1,
         "poor": 0.0
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     },
     {
       "country": "United States",
@@ -302,7 +448,11 @@
         "good": 0.15,
         "standard": 0.15,
         "poor": 0.1
-      }
+      },
+      "flag": "",
+      "coin": ""
+
+      
     }
   ]
 }
