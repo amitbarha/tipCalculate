@@ -33,7 +33,6 @@ function Tipform() {
 
         axios.get(`${HOST}/tips`)
         .then(response => {
-            console.log(response.data);
             setDataTips(response.data)
         })
         .catch(error => {
@@ -58,7 +57,6 @@ function Tipform() {
 
     function handleCalculate() {
 
-        console.log(photoPrice);
         let chosenTip;
         // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
         const index = dataTips.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
@@ -76,13 +74,11 @@ function Tipform() {
             tip = Math.ceil(price * chosenTip)
             totalPrice = Math.ceil(tip + price * 1);
             divideByAmount = Math.ceil(totalPrice / amount)
-            sessionStorage.setItem('tip', tip)
-            sessionStorage.setItem('totalPrice', totalPrice)
-            sessionStorage.setItem('divideByAmount', divideByAmount)
+            
             const coin = dataTips[index].coin;
             setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount, dataResult[3] = coin])
             setBlock('block')
-            console.log(dataResult);
+           
 
         }
         else
@@ -131,14 +127,14 @@ function Tipform() {
                         <Rating size="large" onChange={(e) => setFoodRating(e.target.value * 30)}></Rating>
                     </div>
                     <div className="rating-box">
-                        <div>Atmosophire:</div>
+                        <div>Atmosphere:</div>
                         <Rating size="large" onChange={(e) => setAtmoRating(e.target.value * 20)}></Rating>
                     </div>
                     <div></div>
                 </div>
                 <div className="calc-button">
                     <Popup
-                        trigger={<Button>Your'e Tip</Button>}
+                        trigger={<Button>Your Tip</Button>}
                         modal
                         closeOnDocumentClick
                         onOpen={handleCalculate}
