@@ -1,13 +1,15 @@
 import './fix-mistake.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+const HOST = 'https://tipcalculatordb.onrender.com'
+
 function FixMistake() {
     const [dataTips, setDataTips] = useState()
     const [chosenCountry, setChosenCountry] = useState()
     const [updateMessage, setUpdatdeMessage] = useState()
     const [createMessage, setCreateMessage] = useState()
     useEffect(() => {
-        axios.get('http://localhost:3000/tips')
+        axios.get(`${HOST}/tips`)
             .then(response => {
                 setDataTips(response.data)
             })
@@ -23,7 +25,7 @@ function FixMistake() {
         const standard = e.target[1].value
         const poor = e.target[2].value
 
-        axios.patch('http://localhost:3000/tips/update',  {_id: chosenCountry?._id,  tips: {good: good, standard: standard, poor: poor} } )
+        axios.patch(`${HOST}/tips/update`,  {_id: chosenCountry?._id,  tips: {good: good, standard: standard, poor: poor} } )
                 .then(data => {
                     console.log(data);
                     setUpdatdeMessage("Thank you!")
@@ -43,7 +45,7 @@ function FixMistake() {
         const standard = e.target[2].value
         const poor = e.target[3].value
 
-        axios.post('http://localhost:3000/tips/create',  {country: country, tips: {good: good, standard: standard, poor: poor}  } )
+        axios.post(`${HOST}/tips/create`,  {country: country, tips: {good: good, standard: standard, poor: poor}  } )
                 .then(data => {
                     console.log(data);
                     setCreateMessage("Thank you!")

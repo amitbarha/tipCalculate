@@ -12,6 +12,7 @@ import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
 import ImageToText from "./ImageToText"
 const tipData = countries
+const HOST = 'https://tipcalculatordb.onrender.com'
 
 
 
@@ -30,7 +31,7 @@ function Tipform() {
     useEffect(() => {
         getGeoInfo();
 
-        axios.get('http://localhost:3000/tips')
+        axios.get(`${HOST}/tips`)
         .then(response => {
             console.log(response.data);
             setDataTips(response.data)
