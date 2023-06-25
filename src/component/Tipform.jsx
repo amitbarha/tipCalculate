@@ -59,7 +59,7 @@ function Tipform() {
 
         let chosenTip;
         // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
-        const index = dataTips.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
+        const index = dataTips?.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
         if (index != -1) {
             setBackgroundFlag(dataTips[index].flag)
             tips = dataTips[index].tips
