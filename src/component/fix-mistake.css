@@ -1,0 +1,49 @@
+.title-fix {
+    text-align: center;
+}
+
+.forms-fix {
+    display: grid;
+    height: 30vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1vw;
+}
+
+.form-fix {
+    border-radius: 10px;
+    background-color: antiquewhite;
+
+}
+
+
+.inputs-fix {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+.label-style {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.select-style {
+    margin-bottom: 20px;
+    padding: 8px;
+}
+
+.input-style {
+    padding: 8px;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 1vw;
+}
+
+.submit-button {
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

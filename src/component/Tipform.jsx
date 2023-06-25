@@ -17,6 +17,7 @@ const tipData = countries
 
 
 function Tipform() {
+    const [dataTips, setDataTips] = useState()
     const [chosenCountry, setChosenCountry] = useState()
     function getGeoInfo() {
         axios.get('https://ipapi.co/json/').then((response) => {
@@ -28,11 +29,21 @@ function Tipform() {
     };
     useEffect(() => {
         getGeoInfo();
+
+        axios.get('http://localhost:3000/tips')
+        .then(response => {
+            console.log(response.data);
+            setDataTips(response.data)
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }, [])
     const [serviceRating, setServiceRating] = useState(1)
     const [foodRating, setFoodRating] = useState(1)
     const [atmoRating, setAtmoRating] = useState(1)
     const [price, setPrice] = useState(0)
+   
     const [amount, setAmount] = useState(1)
     const [block, setBlock] = useState('')
     const [dataResult, setDataResult] = useState([])
@@ -49,10 +60,10 @@ function Tipform() {
         console.log(photoPrice);
         let chosenTip;
         // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
-        const index = tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
+        const index = dataTips.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
         if (index != -1) {
-            setBackgroundFlag(tipData.countries[index].flag)
-            tips = tipData.countries[index].tips
+            setBackgroundFlag(dataTips[index].flag)
+            tips = dataTips[index].tips
             console.log(tips);
             let totalRating = serviceRating + foodRating + atmoRating;
             if (totalRating >= 370)
@@ -67,7 +78,7 @@ function Tipform() {
             sessionStorage.setItem('tip', tip)
             sessionStorage.setItem('totalPrice', totalPrice)
             sessionStorage.setItem('divideByAmount', divideByAmount)
-            const coin = tipData.countries[index].coin;
+            const coin = dataTips[index].coin;
             setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount, dataResult[3] = coin])
             setBlock('block')
             console.log(dataResult);
@@ -142,7 +153,9 @@ function Tipform() {
                                     {dataResult[1] != 0 ? <h2>The tip is {dataResult[1]}{dataResult[3]}</h2> : <h2 style={{ textAlign: 'center' }}>In this country the Tip is not expected or required in relation to the grade you gave. </h2>}
                                     <h2>Total price {dataResult[0]}{dataResult[3]}</h2>
                                     <h2>Each person {dataResult[2]}{dataResult[3]}</h2>
+                                    <Link to={'/fix'}>Find mistakes?</Link>
                                 </div>
+                                
                             </div>
                             // </div>
                         )}

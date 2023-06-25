@@ -6,6 +6,7 @@ import './App.css'
 import { Button, Rating } from '@mui/material'
 import Layout from './component/Layout';
 import HomePage from './component/HomePage';
+import FixMistake from './component/FixMistake.jsx';
 
 function App() {
   const price = useContext(Context);
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} ></Route>
           <Route path='tipForm' element={<Tipform />} ></Route>
+          <Route path='fix' element={<FixMistake />}></Route>
 
         </Route>
       </Routes>
