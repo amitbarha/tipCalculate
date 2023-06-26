@@ -20,6 +20,7 @@ const HOST = 'https://tipcalculatordb.onrender.com'
 function Tipform() {
     const [dataTips, setDataTips] = useState()
     const [chosenCountry, setChosenCountry] = useState()
+    const [errorMessage, setErrorMessage] = useState(1)
     function getGeoInfo() {
         axios.get('https://ipapi.co/json/').then((response) => {
             let data = response.data;
@@ -61,6 +62,8 @@ function Tipform() {
         // setIndex(tipData.countries.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase()));
         const index = dataTips?.findIndex(c => c.country.toLowerCase() === chosenCountry.toLowerCase())
         if (index != -1) {
+            if (amount>0 && price>0)
+            {
             setBackgroundFlag(dataTips[index].flag)
             tips = dataTips[index].tips
             console.log(tips);
@@ -78,7 +81,15 @@ function Tipform() {
             const coin = dataTips[index].coin;
             setDataResult([dataResult[0] = totalPrice, dataResult[1] = tip, dataResult[2] = divideByAmount, dataResult[3] = coin])
             setBlock('block')
-           
+            }
+            else if (amount<1)
+            {
+                setErrorMessage("Please enter amount of people bigger than 0")
+            }
+            else if (price<1)
+            {
+                setErrorMessage("Please enter price bigger than 0")
+            }
 
         }
         else
@@ -147,9 +158,14 @@ function Tipform() {
                                 </button>
                                 <div className="text-popup">
                                     <h1>Tip Summary</h1>
+                                    {errorMessage!=1&& <h2 style={{color:'red'}}>{errorMessage}</h2>}
+                                    {errorMessage == 1 &&
+                                    <div>
                                     {dataResult[1] != 0 ? <h2>The tip is {dataResult[1]}{dataResult[3]}</h2> : <h2 style={{ textAlign: 'center' }}>In this country the Tip is not expected or required in relation to the grade you gave. </h2>}
                                     <h2>Total price {dataResult[0]}{dataResult[3]}</h2>
                                     <h2>Each person {dataResult[2]}{dataResult[3]}</h2>
+                                    </div>
+                                    }
                                     <Link to={'/fix'}>Find mistakes?</Link>
                                 </div>
                                 
